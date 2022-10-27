@@ -22,7 +22,7 @@
                 <div class="categoryPopup__container">
                     <input class="categoryPopup__container--input" type="text" v-model="searchQuery">
                     <ul class="categoryPopup__container--options" >
-                        <li class="categoryPopup__container--options__item" v-for="category in categories">
+                        <li class="categoryPopup__container--options__item" v-for="category in resultQuery">
                             {{ category.name }}
                         </li>
                     </ul>

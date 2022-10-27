@@ -20,18 +20,18 @@ new Vue({
       ]
     };
   },
-  // computed: {
-  //   resultQuery() {
-  //     if (this.searchQuery) {
-  //       return this.categories.filter((category) => {
-  //         return this.searchQuery
-  //           .toLowerCase()
-  //           .split(' ')
-  //           .every(v => category.title.toLowerCase().includes(v))
-  //       })
-  //     } else {
-  //       return this.categories
-  //     }
-  //   }
-  // },
+  computed: {
+    resultQuery() {
+      if (this.searchQuery) {
+        return this.categories.filter((category) => {
+          return this.searchQuery
+            .toLowerCase()
+            .split(' ')
+            .every(char => category.name.toLowerCase().includes(char))
+        })
+      } else {
+        return this.categories
+      }
+    }
+  },
 });
