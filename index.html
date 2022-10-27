@@ -20,23 +20,11 @@
         <transition name="fade" appear>
             <div class="categoryPopup" v-if="showCategoryPopup">
                 <div class="categoryPopup__container">
-                    <input class="categoryPopup__container--input" type="search">
-                    <ul class="categoryPopup__container--options">
-                        <li class="categoryPopup__container--options__item categoryPopup__container--options__item--selected">Товарка</li>
-                        <li class="categoryPopup__container--options__item">Нутра</li>
-                        <li class="categoryPopup__container--options__item">Крипта</li>
-                        <li class="categoryPopup__container--options__item">Товарка 2</li>
-                        <li class="categoryPopup__container--options__item">Нутра 2</li>
-                        <li class="categoryPopup__container--options__item">Крипта 2</li>
-                        <li class="categoryPopup__container--options__item">Товарка 3</li>
-                        <li class="categoryPopup__container--options__item">Нутра 3</li>
-                        <li class="categoryPopup__container--options__item">Крипта 3</li>
-                        <li class="categoryPopup__container--options__item">Товарка 4</li>
-                        <li class="categoryPopup__container--options__item">Нутра 4</li>
-                        <li class="categoryPopup__container--options__item">Крипта 4</li>
-                        <li class="categoryPopup__container--options__item">Товарка 5</li>
-                        <li class="categoryPopup__container--options__item">Нутра 5</li>
-                        <li class="categoryPopup__container--options__item">Крипта 5</li>
+                    <input class="categoryPopup__container--input" type="text" v-model="searchQuery">
+                    <ul class="categoryPopup__container--options" >
+                        <li class="categoryPopup__container--options__item" v-for="category in categories">
+                            {{ category.name }}
+                        </li>
                     </ul>
                     <div class="categoryPopup__container--buttons">
                         <button class="categoryPopup__container--buttons__save">
