@@ -14,12 +14,23 @@
 <body>
     <div class="app">
         <label class="categoryPopupLabel" for="">
-            <select class="select"  @click="showCategoryPopup = true"></select>
+            <select
+                class="select"
+                @click.prevent="showCategoryPopup = true"
+            ></select>
             <transition name="fade" appear>
-                <div class="categoryPopupOverlay" v-if="showCategoryPopup" @click="showCategoryPopup = false"></div>
+                <div
+                    class="categoryPopupOverlay"
+                    v-if="showCategoryPopup"
+                    @click="showCategoryPopup = false"
+                ></div>
             </transition>
             <transition name="fade" appear>
-                <div class="categoryPopup" v-if="showCategoryPopup">
+                <div
+                    class="categoryPopup"
+                    v-if="showCategoryPopup"
+                    v-on-clickaway = "away"
+                >
                     <div class="categoryPopup__container">
                         <input
                             class="categoryPopup__container--input"
@@ -55,6 +66,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-clickaway/2.2.1/vue-clickaway.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

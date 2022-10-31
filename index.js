@@ -1,11 +1,14 @@
+const clickaway = window.VueClickaway.mixin;
+
 new Vue({
   el: '.app',
+  mixins: [ clickaway ],
   data () {
     return {
       searchQuery: null,
       showCategoryPopup: false,
       categories: [
-        { id: 1, name: 'Нутра', isSelected: true },
+        { id: 1, name: 'Нутра', isSelected: false },
         { id: 2, name: 'Крипта', isSelected: false },
         { id: 3, name: 'Товарка', isSelected: false },
         { id: 4, name: 'Нутра 2', isSelected: false },
@@ -19,6 +22,14 @@ new Vue({
         { id: 12, name: 'Товарка 4', isSelected: false },
       ]
     };
+  },
+  methods: {
+    openMenu: function() {
+      this.showCategoryPopup = !this.showCategoryPopup;
+    },
+    away: function() {
+      this.showCategoryPopup = !this.showCategoryPopup;
+    },
   },
   computed: {
     resultQuery() {
