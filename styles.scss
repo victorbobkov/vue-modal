@@ -26,28 +26,11 @@
     cursor: pointer;
 }
 
-
-
 .categoryPopupLabel {
     position: relative;
 }
 
-
-// .categoryPopupOverlay {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     z-index: 98;
-// }
 .categoryPopup {
-    // position: fixed;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    // z-index: 99;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -57,7 +40,6 @@
 
     &__container {
         width: 416px;
-        height: 715px;
         background-color: #fff;
         border: 1px solid #000;
 
@@ -127,6 +109,7 @@
             }
 
             &__item--selected {
+                position: relative;
                 width: 350px;
                 height: 52px;
                 font-family: 'Roboto Flex';
@@ -137,12 +120,18 @@
                 color: #000;
                 cursor: pointer;
                 padding: 11px 0 19px 29px;
-                background: url('./images/check-uncompressed.png') no-repeat  278px 19px;
                     background-size: 15px;
 
                 &:hover {
                     background: #F7F7F7;
                 }
+
+                &::after {
+                    content: "✔";
+                    position: absolute;
+                    font-size: 20px;
+                    left: 299px;
+                  }
             }
         }
 
@@ -192,7 +181,7 @@
                 border: 1px solid #C695FF;
                 cursor: pointer;
 
-                margin: 10px 0 0 0;
+                margin: 10px 0 18px 0;
                 font-family: 'Roboto-Flex3';
                 font-style: normal;
                 font-weight: 500;
