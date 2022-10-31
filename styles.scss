@@ -26,21 +26,31 @@
     cursor: pointer;
 }
 
-.categoryPopupOverlay {
+
+
+.categoryPopupLabel {
+    position: relative;
+}
+
+
+// .categoryPopupOverlay {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     z-index: 98;
+// }
+.categoryPopup {
+    // position: fixed;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // z-index: 99;
+
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 98;
-}
-
-.categoryPopup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99;
 
     width: 416px;
     max-width: 600px;    
@@ -61,6 +71,10 @@
             background: #fff;
             border: 1px solid #000;
             border-radius: 15px;
+
+            background: url('./images/icon_search.png') no-repeat 16px 17px;
+            background-size: 15px;
+            padding-left: 42px;
 
             font-family: 'Roboto Flex';
             font-style: normal;
@@ -110,9 +124,24 @@
                 &:hover {
                     background: #F7F7F7;
                 }
+            }
 
-                &--selected {
-                    font-weight: 600;
+            &__item--selected {
+                width: 350px;
+                height: 52px;
+                font-family: 'Roboto Flex';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 25px;
+                line-height: 110%;
+                color: #000;
+                cursor: pointer;
+                padding: 11px 0 19px 29px;
+                background: url('./images/check-uncompressed.png') no-repeat  278px 19px;
+                    background-size: 15px;
+
+                &:hover {
+                    background: #F7F7F7;
                 }
             }
         }
@@ -124,7 +153,7 @@
             align-items: center;
             margin: 9px 0 0 0;
 
-            position: fixed;
+            // position: fixed;
             right: 50%;
             left: 50%;
             bottom: 15px;
