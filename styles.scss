@@ -24,6 +24,7 @@
     border-radius: 15px;
     font-size: 20px;
     cursor: pointer;
+    outline: none;
 }
 
 .categoryPopupLabel {
@@ -67,7 +68,8 @@
             color: #000;
 
             &:focus {
-                outline: .02rem solid #000000;
+                outline: none;
+                // outline: 2px solid #000000;
             }
         }
 
@@ -127,10 +129,13 @@
                 }
 
                 &::after {
-                    content: "✔";
+                    content: "";
                     position: absolute;
-                    font-size: 20px;
+                    width: 27px;
+                    height: 17px;
                     left: 299px;
+                    top: 15px;
+                    background: url('./images/check-uncompressed.png') no-repeat center;
                   }
             }
         }

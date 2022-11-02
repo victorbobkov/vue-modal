@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +22,7 @@
   border-radius: 15px;
   font-size: 20px;
   cursor: pointer;
+  outline: none;
 }
 
 .categoryPopupLabel {
@@ -62,7 +62,7 @@
   color: #000;
 }
 .categoryPopup__container--input:focus {
-  outline: 0.02rem solid #000000;
+  outline: none;
 }
 .categoryPopup__container--options {
   display: flex;
@@ -115,10 +115,13 @@
   background: #F7F7F7;
 }
 .categoryPopup__container--options__item--selected::after {
-  content: "✔";
+  content: "";
   position: absolute;
-  font-size: 20px;
+  width: 27px;
+  height: 17px;
   left: 299px;
+  top: 15px;
+  background: url("./images/check-uncompressed.png") no-repeat center;
 }
 .categoryPopup__container--buttons {
   display: flex;

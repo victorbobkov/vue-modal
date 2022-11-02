@@ -30,6 +30,11 @@ new Vue({
     away: function() {
       this.showCategoryPopup = !this.showCategoryPopup;
     },
+    clear: function() {
+      this.categories.forEach((category, index) => {
+        this.categories[index].isSelected = false;
+      });
+    }
   },
   computed: {
     resultQuery() {

@@ -29,7 +29,7 @@
                 <div
                     class="categoryPopup"
                     v-if="showCategoryPopup"
-                    v-on-clickaway = "away"
+                    v-on-clickaway="away"
                 >
                     <div class="categoryPopup__container">
                         <input
@@ -49,12 +49,15 @@
                             </li>
                         </ul>
                         <div class="categoryPopup__container--buttons">
-                            <button class="categoryPopup__container--buttons__save">
+                            <button
+                                class="categoryPopup__container--buttons__save"
+                                @click="showCategoryPopup = false"   
+                            >
                                 Сохранить
                             </button>
                             <button
                                 class="categoryPopup__container--buttons__cancel"
-                                @click="showCategoryPopup = false"
+                                @click="showCategoryPopup = false; clear()"
                             >
                                 Отменить
                             </button>
