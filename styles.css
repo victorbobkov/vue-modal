@@ -14,7 +14,7 @@
   overflow-x: hidden;
 }
 
-.select {
+.filter__header--select {
   width: 416px;
   height: 50px;
   background: #fff;
@@ -177,14 +177,4 @@
 .categoryPopup__container--buttons__cancel:hover {
   color: #7F03A5;
   border: 1px solid #7F03A5;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }/*# sourceMappingURL=styles.css.map */

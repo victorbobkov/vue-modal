@@ -16,7 +16,7 @@
     overflow-x: hidden;
 }
 
-.select {
+.filter__header--select {
     width: 416px;
     height: 50px;
     background: #fff;
@@ -206,12 +206,12 @@
     }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity .5s;
-}
+// .fade-enter-active,
+// .fade-leave-active {
+//     transition: opacity .5s;
+// }
 
-.fade-enter,
-.fade-leave-to {
-    opacity: 0;
-}
+// .fade-enter,
+// .fade-leave-to {
+//     opacity: 0;
+// }

@@ -15,56 +15,52 @@
     <div class="app">
         <label class="categoryPopupLabel" for="">
             <select
-                class="select"
+                class="filter__header--select"
                 @click.prevent="showCategoryPopup = true"
             ></select>
-            <transition name="fade" appear>
-                <div
-                    class="categoryPopupOverlay"
-                    v-if="showCategoryPopup"
-                    @click="showCategoryPopup = false"
-                ></div>
-            </transition>
-            <transition name="fade" appear>
-                <div
-                    class="categoryPopup"
-                    v-if="showCategoryPopup"
-                    v-on-clickaway="away"
-                >
-                    <div class="categoryPopup__container">
-                        <input
-                            class="categoryPopup__container--input"
-                            type="text"
-                            v-model="searchQuery"
+            <div
+                class="categoryPopupOverlay"
+                v-if="showCategoryPopup"
+                @click="showCategoryPopup = false"
+            ></div>
+            <div
+                class="categoryPopup"
+                v-if="showCategoryPopup"
+                v-on-clickaway="away"
+            >
+                <div class="categoryPopup__container">
+                    <input
+                        class="categoryPopup__container--input"
+                        type="text"
+                        v-model="searchQuery"
+                    >
+                    <ul class="categoryPopup__container--options">
+                        <li
+                            class="categoryPopup__container--options__item"
+                            v-for="category in resultQuery"
+                            :key="category.id"
+                            :class="{ 'categoryPopup__container--options__item--selected': category.isSelected}"
+                            @click="category.isSelected = !category.isSelected"
                         >
-                        <ul class="categoryPopup__container--options">
-                            <li
-                                class="categoryPopup__container--options__item"
-                                v-for="category in resultQuery"
-                                :key="category.id"
-                                :class="{ 'categoryPopup__container--options__item--selected': category.isSelected}"
-                                @click="category.isSelected = !category.isSelected"
-                            >
-                                {{ category.name }}
-                            </li>
-                        </ul>
-                        <div class="categoryPopup__container--buttons">
-                            <button
-                                class="categoryPopup__container--buttons__save"
-                                @click="showCategoryPopup = false"   
-                            >
-                                Сохранить
-                            </button>
-                            <button
-                                class="categoryPopup__container--buttons__cancel"
-                                @click="showCategoryPopup = false; clear()"
-                            >
-                                Отменить
-                            </button>
-                        </div>
+                            {{ category.name }}
+                        </li>
+                    </ul>
+                    <div class="categoryPopup__container--buttons">
+                        <button
+                            class="categoryPopup__container--buttons__save"
+                            @click="showCategoryPopup = false"   
+                        >
+                            Сохранить
+                        </button>
+                        <button
+                            class="categoryPopup__container--buttons__cancel"
+                            @click="showCategoryPopup = false; clear()"
+                        >
+                            Отменить
+                        </button>
                     </div>
                 </div>
-            </transition>
+            </div>
         </label>
     </div>
 

@@ -31,8 +31,8 @@ new Vue({
       this.showCategoryPopup = !this.showCategoryPopup;
     },
     clear: function() {
-      this.categories.forEach((category, index) => {
-        this.categories[index].isSelected = false;
+      this.categories.forEach((category) => {
+        category.isSelected = false;
       });
       this.searchQuery = null;
     }
