@@ -34,6 +34,7 @@ new Vue({
       this.categories.forEach((category, index) => {
         this.categories[index].isSelected = false;
       });
+      this.searchQuery = null;
     }
   },
   computed: {
